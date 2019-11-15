@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>caesarCipher</title>
+</head>
+<body>
+
+<div>
+    <label for="user-n">몇 칸 띄울까요?</label>
+    <input type="text" id="user-n">
+</div>
+<div>
+    <label for="user-input">입력해주세요</label>
+    <input autofocus type="text" id="user-input">
+</div>
+<div>
+
+<h1 id="none">
+    ✔나와랏: <span id="user-output"></span>
+</h1>
+</div>
+<script>
+    // 내 코드 --------------------------------------------------
+    const inputArea = document.querySelector('#user-input');
+    const resultArea = document.querySelector('#user-output');
+    const nArea = document.querySelector('#user-n');
+
+    inputArea.addEventListener('input', e => {
+        const newArray = inputArea.value.split('');
+        const ans = [];
+        for (let i = 0; i < newArray.length; i++) {
+            ans.push(String.fromCharCode(newArray[i].charCodeAt() + Number(nArea.value)));
+        }
+        resultArea.innerHTML = ans.join('');
+    })
+
+    // 교수님 코드 --------------------------------------------------
+    const inputArea = document.querySelector('#user-input');
+    const resultArea = document.querySelector('#user-output');
+    const numberArea = document.querySelector('#user-n');
+
+    inputArea.addEventListener('input', e => {
+        const n = Number(numberArea.value);
+        const charArray = inputArea.value.split('');
+        const resultString = charArray.map(char => {
+            let charNumber = char.charCodeAt();
+            charNumber += n;
+            return String.fromCharCode(charNumber);
+        }).join('');
+        resultArea.innerHTML = resultString
+    })
+
+
+
+</script>
+</body>
+</html>

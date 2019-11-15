@@ -1,0 +1,24 @@
+{% extends 'boards/base.html' %}
+
+{% block title %} Article{{ article.id }} {% endblock %}
+
+{% block body%} 
+<h1>{{ article.title }}</h1>
+<p>
+    {{ article.content }}
+</p>
+<div>
+    <a href='/boards/articles/'>
+        <button>Show Article List</button>
+    </a>
+</div>
+<div>
+    <a href="/boards/articles/update_article/{{ article.id }}/">
+        <button>Edit this article</button>
+    </a>
+</div>
+<form action="/boards/articles/delete/{{ article.id }}/" method="POST">
+    {% csrf_token %} <!--post로 날리는거-->
+    <button>Delete this article</button>
+</form>
+{% endblock %}

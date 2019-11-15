@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+    <title>그리드시스템</title>
+</head>
+
+<body>
+    <br>
+    <h1 class="text-center">1. auto layout 칼럼</h1>
+    <br>
+    <br>
+
+    <div class="container-fluid ">
+        <h3>1-1 동일폭</h3>
+        <p>단위숫자 없이 클래스를 추가하면 모든 칼럼은 동일한 폭이 됩니다.</p>
+
+        <div class="row bg-secondary">
+            <div class="col border border-dark">
+                1 of 2
+            </div>
+            <div class="col border border-dark">
+                2 of 2
+            </div>
+        </div>
+        <div class="row bg-success">
+            <div class="col border border-dark">
+                1 of 3
+            </div>
+            <div class="col border border-dark">
+                2 of 3
+            </div>
+            <div class="col border border-dark">
+                3 of 3
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <div class="container-fluid">
+        <h3>1-2 특정 칼럼 너비 셋팅</h3>
+        <p>한 칼럼의 폭을 지정하면 다른 형제 칼럼의 폭은 자동으로 다시 조정 된다는 뜻</p>
+        <div class="row">
+            <div class="col border border-dark">
+                1 of 3
+            </div>
+            <div class="col-6 border border-dark">
+                2 of 3 (넓음)
+            </div>
+            <div class="col border border-dark">
+                3 of 3
+            </div>
+        </div>
+        <div class="row">
+            <div class="col border border-dark">
+                1 of 3
+            </div>
+            <div class="col-5 border border-dark">
+                2 of 3 (넓음)
+            </div>
+            <div class="col border border-dark">
+                3 of 3
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <div class="container-fluid">
+        <h3>1-3 가변폭 컨텐츠 (이해 안됨)</h3>
+        <p>col-{breakpoint}-auto 클래스를 사용하여 컨텐츠의 너비에 따라 칼럼 폭이 가변적으로 변경될 수 있도록 하세요.</p>
+        <div class="row justify-content-md-center">
+            <div class="col col-lg-2 border border-dark">
+                1 of 3
+            </div>
+            <div class="col-md-auto border border-dark">
+                가변 폭 콘텐츠
+            </div>
+            <div class="col col-lg-2 border border-dark">
+                3 of 3
+            </div>
+        </div>
+        <div class="row">
+            <div class="col border border-dark">
+                1 of 3
+            </div>
+            <div class="col-md-auto border border-dark">
+                가변 폭 콘텐츠
+            </div>
+            <div class="col col-lg-2 border border-dark">
+                3 of 3
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <div class="container-fluid">
+        <h3>1-4 동일 폭 멀티라인</h3>
+        <p>칼럼을 줄바꿈할 위치에 .w-100을 삽입하여 멀티 라인 동일폭 칼럼을 작성합니다.</p>
+        <div class="row">
+            <div class="col border border-dark">Column</div>
+            <div class="col border border-dark">Column</div>
+            <div class="w-100"></div>
+            <div class="col border border-dark">Column</div>
+            <div class="col border border-dark">Column</div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+
+    <h1 class="text-center">2. 반응형 클래스</h1>
+    <p class="text-center">col-, col-sm-, col-md-, col-lg-, col-xl-</p>
+    <br>
+    <br>
+
+    <h3>2-1 전체 디바이스 포괄</h3>
+    <div class="row">
+        <div class="col border border-dark">col</div>
+        <div class="col border border-dark">col</div>
+        <div class="col border border-dark">col</div>
+        <div class="col border border-dark">col</div>
+    </div>
+    <div class="row">
+        <div class="col-8 border border-dark">col-8</div>
+        <div class="col-4 border border-dark">col-4</div>
+    </div>
+    <br>
+    <br>
+
+    <h3>2-1 수평으로 쌓기</h3>
+    <p>스마트폰(extra small)에서는 수직으로 쌓이게 하고, 데스크탑(medium)에서는 수평으로 </p>
+    <div class="row">
+        <div class="col-sm-8 border border-dark">col-sm-8</div>
+        <div class="col-sm-4 border border-dark">col-sm-4</div>
+    </div>
+    <div class="row">
+        <div class="col-sm border border-dark">col-sm</div>
+        <div class="col-sm border border-dark">col-sm</div>
+        <div class="col-sm border border-dark">col-sm</div>
+    </div>
+    <br>
+    <br>
+
+    <h3>2-2 클래스의 조합</h3>
+    <!-- 모바일에서는 전체너비와 절반너비의 칼럼으로 수직 배치합니다. -->
+    <div class="row">
+        <div class="col-12 col-md-8 border border-dark">.col-12 .col-md-8</div>
+        <div class="col-6 col-md-4 border border-dark">.col-6 .col-md-4</div>
+    </div>
+
+    <!-- 모바일에서는 50%, 데스크탑에서는 33.3% 로 칼럼 폭이 변경됩니다. -->
+    <div class="row">
+        <div class="col-6 col-md-4 border border-dark">.col-6 .col-md-4</div>
+        <div class="col-6 col-md-4 border border-dark">.col-6 .col-md-4</div>
+        <div class="col-6 col-md-4 border border-dark">.col-6 .col-md-4</div>
+    </div>
+
+    <!-- 모바일 및 데스크톱에서 항상 칼럼폭이 50% 입니다. -->
+    <div class="row">
+        <div class="col-6 border border-dark">.col-6</div>
+        <div class="col-6 border border-dark">.col-6</div>
+    </div>
+    <br>
+    <br>
+
+    <h1 class="text-center">3. 정렬</h1>
+    <p>Flexbox 정렬 유틸리티를 사용하여 수직 및 수평으로 칼럼을 정렬</p>
+    <p>justify-content-start/ justify-content-end/ justify-content-center/ justify-content-around/
+        justify-content-between </p>
+    <br>
+    <br>
+    <h3>3-1 수직 정렬 개구리</h3>
+    <div class="container">
+        <div class="row align-items-start" style="max-height: 300px;">
+            <div class="col border border-dark">
+                One of three columns
+            </div>
+            <div class="col border border-dark">
+                One of three columns
+            </div>
+            <div class="col border border-dark">
+                One of three columns
+            </div>
+        </div>
+        <div class="row align-items-center" style="max-height: 300px;">
+            <div class="col border border-dark">
+                One of three columns
+            </div>
+            <div class="col border border-dark">
+                One of three columns
+            </div>
+            <div class="col border border-dark">
+                One of three columns
+            </div>
+        </div>
+        <div class="row align-items-end"  style="max-height: 300px;">
+            <div class="col border border-dark">
+                One of three columns
+            </div>
+            <div class="col border border-dark">
+                One of three columns
+            </div>
+            <div class="col border border-dark">
+                One of three columns
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <h3>3-2 수평 정렬 개구리</h3>
+    <div class="container-fluid">
+        <div class="row justify-content-start">
+            <div class="col-4 border border-dark">
+                두개의 칼럼중 하나
+            </div>
+            <div class="col-4 border border-dark">
+                두개의 칼럼중 하나
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-4 border border-dark">
+                두개의 칼럼중 하나
+            </div>
+            <div class="col-4 border border-dark">
+                두개의 칼럼중 하나
+            </div>
+        </div>
+        <div class="row justify-content-end">
+            <div class="col-4 border border-dark">
+                두개의 칼럼중 하나
+            </div>
+            <div class="col-4 border border-dark">
+                두개의 칼럼중 하나
+            </div>
+        </div>
+        <div class="row justify-content-around">
+            <div class="col-4 border border-dark">
+                두개의 칼럼중 하나
+            </div>
+            <div class="col-4">
+                두개의 칼럼중 하나
+            </div>
+        </div>
+        <div class="row justify-content-between">
+            <div class="col-4 border border-dark">
+                두개의 칼럼중 하나
+            </div>
+            <div class="col-4 border border-dark">
+                두개의 칼럼중 하나
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <h3>3-2 여백없애기</h3>
+    <p>칼럼 사이에 있는 여백(gutter)은 .no-gutters로 제거 할 수 있습니다. 이렇게하면 .row 에 적용된 마이너스 margin과 직계 하위 칼럼의 가로 padding이 제거됩니다.</p>
+    <div class="row no-gutters">
+        <div class="col-12 col-sm-6 col-md-8 border border-dark">.col-12 .col-sm-6 .col-md-8</div>
+        <div class="col-6 col-md-4 border border-dark">.col-6 .col-md-4</div>
+    </div>
+    <br>
+    <br>
+
+    <h2>3-3 칼럼 묶기</h2>
+    <p>하나의 행(row)에 12개 이상의 칼럼 유닛이 있으면, 초과된 유닛이 포함된 칼럼은 새 행(row)으로 묶입니다.</p>
+    <div class="row">
+        <div class="col-9 border border-dark">.col-9</div>
+        <div class="col-4 border border-dark">.col-4<br>9 + 4 = 13 &gt; 12 이므로, 이 div는 하나의 연속된 유닛으로서 새로운 라인에 래핑 됩니다.</div>
+        <div class="col-6 border border-dark">.col-6<br>후속 칼럼은 계속해서 새 라인을 따라 이어집니다.</div>
+    </div>
+    <br>
+    <br>
+
+    <h3>3-4 칼럼 줄바꿈</h3>
+    <p>클래스에 w-100 추가하면 줄바꿈</p>
+    <div class="row">
+        <div class="col-6 col-sm-3 border border-dark">.col-6 .col-sm-3</div>
+        <div class="col-6 col-sm-3 border border-dark">.col-6 .col-sm-3</div>
+
+        <!-- 다음 칼럼을 강제로 새 라인으로 나눕니다. -->
+        <div class="w-100"></div>
+
+        <div class="col-6 col-sm-3 border border-dark">.col-6 .col-sm-3</div>
+        <div class="col-6 col-sm-3 border border-dark">.col-6 .col-sm-3</div>
+    </div>
+    <br>
+    <br>
+
+    <h3>3-5 강제 칼럼 줄바꿈</h3>
+    <p>w-100 d-none d-md-block 추가하면 특정 화면크기에서면 줄바꿈 가능</p>
+    <div class="row">
+        <div class="col-6 col-sm-4 border border-dark">.col-6 .col-sm-4</div>
+        <div class="col-6 col-sm-4 border border-dark">.col-6 .col-sm-4</div>
+
+        <!-- 다음 컬럼을 강제로 md 중단점에서 새로운 라인으로 나눕니다. -->
+        <div class="w-100 d-none d-md-block"></div>
+
+        <div class="col-6 col-sm-4 border border-dark">.col-6 .col-sm-4</div>
+        <div class="col-6 col-sm-4 border border-dark">.col-6 .col-sm-4</div>
+    </div>
+    <br>
+    <br>
+
+    <h1 class="text-center">4. 컬럼 순서지정</h1>
+    <br>
+    <br>
+
+    <h3>4-1 숫자로 순서지정 클래스</h3>
+    <p>.order- 클래스를 사용해서 .order-1.order-md-2 별로 order를 설정</p>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col border border-dark">
+                첫번재, 순서 미지정됨
+            </div>
+            <div class="col order-12 border border-dark">
+                두번째, 하지만 마지막
+            </div>
+            <div class="col order-1 border border-dark">
+                세번째, 하지만 첫번째
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <h3>4-2 문자로 순서지정 클래스</h3>
+    <p>order-first/ order-last</p>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col border border-dark">
+                첫번째, 순서 미지정
+            </div>
+            <div class="col border border-dark">
+                두번째, 순서 미지정
+            </div>
+            <div class="col order-first border border-dark">
+                세번째, 그러나 첫번째
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <h3>4-3 컬럼 간격 띄우기</h3>
+    <p>오프셋 클래스 1 offset-md-* 클래스를 사용하여 칼럼을 오른쪽으로 이동</p>
+    <div class="row">
+        <div class="col-md-4 border border-dark">.col-md-4</div>
+        <div class="col-md-4 offset-md-4 border border-dark">.col-md-4 .offset-md-4</div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 offset-md-3 border border-dark">.col-md-3 .offset-md-3</div>
+        <div class="col-md-3 offset-md-3 border border-dark">.col-md-3 .offset-md-3</div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 offset-md-3 border border-dark">.col-md-6 .offset-md-3</div>
+    </div>
+    <br>
+    <br>
+
+    <p>오프셋 클래스2 처음엔 붙였다가 특정 사이즈에서 떨어뜨렸다가 다시 붙이기 가능</p>
+    <div class="row">
+        <div class="col-sm-5 col-md-6 border border-dark">.col-sm-5 .col-md-6</div>
+        <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0 border border-dark">.col-sm-5 .offset-sm-2 .col-md-6
+            .offset-md-0</div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6 col-md-5 col-lg-6 border border-dark">.col.col-sm-6.col-md-5.col-lg-6</div>
+        <div class="col-sm-6 col-md-5 offset-md-2 col-lg-6 offset-lg-0 border border-dark">.col-sm-6 .col-md-5
+            .offset-md-2 .col-lg-6
+            .offset-lg-0</div>
+    </div>
+    <br>
+    <br>
+
+    <h3>4-4 Margin 유틸리티</h3>
+    <p>mr-auto 같은 margin 유틸리티를 사용하여 형제 칼럼을 서로 멀리 떨어 뜨릴 수 있습니다.</p>
+    <div class="row">
+        <div class="col-md-4 border border-dark">.col-md-4</div>
+        <div class="col-md-4 ml-auto border border-dark">.col-md-4 .ml-auto</div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 ml-md-auto border border-dark">.col-md-3 .ml-md-auto</div>
+        <div class="col-md-3 ml-md-auto border border-dark">.col-md-3 .ml-md-auto</div>
+    </div>
+    <div class="row">
+        <div class="col-auto mr-auto border border-dark">.col-auto .mr-auto</div>
+        <div class="col-auto border border-dark">.col-auto</div>
+    </div>
+    <br>
+    <br>
+
+
+
+</body>
+
+</html>

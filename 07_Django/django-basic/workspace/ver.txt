@@ -1,0 +1,28 @@
+semver(Semantic Versioning)
+
+정해지기 전까지는 사람들이 중구난방으로 버전을 업데이트 했다
+그래서 이제는 버전을 올릴 때 의미 있게 올리자로 정한게 Semantic Versioning
+
+Major.Minor.Patch
+3.6.7
+
+Major : 많은게 바뀌어서, 새로 코드를 짜야한다.
+Minor : 기능의 추가나 삭제가 있지만 기존 코드를 부수진 않는다
+Patch : 버그 픽스
+
+2019023
+
+1. 테이블 생성 (timetables)
+1-1스키마: id(INT PK), 
+subject(TEXT NOTNULL), ;
+calender(TEXT NOTNULLl;
+
+2. 레코드: 오늘 ~금까지 내용추가 C
+3. subject 에 'sql'이라는 문자열이 있는 레코드 추출 R
+4. 토요일 관련 레코드를 추가 C
+5. 토요일 subject 수정 U
+6. 토요일 레코드 삭제 D
+7. test 칼럼추가
+8. 각 record의 text를 0으로 바꾼다
+10. project 칼럼 추가
+11.  project 칼럼을 알맞게 수정

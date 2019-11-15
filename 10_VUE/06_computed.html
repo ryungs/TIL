@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>06_computed</title>
+</head>
+<a href="https://kr.vuejs.org/v2/guide/computed.html">VueJS 공식문서</a>
+<body>
+
+<div id="app">
+<!--    {{ message.split('').reverse().join('') }} BAD WAY-->
+<!--
+    1. {{ let i = 1 }} 변수 선언 쓸 수 없음
+    2. {{ message.split('').reverse().join('') }} Bad Way 쓸 수는 있지만 안 좋은 방법
+    3. {{ if (condition) { do something}} }} if 문은 못 쓰고
+        {{ condition ? a : b }} 삼항 연산자는 된다
+ -->
+    <p>원본 메시지: {{ message }}</p>
+    <p>뒤집 메시지: {{ reverseMessage() }}</p>
+    <p>뒤집 메시지: {{ reversedMessage }}</p>
+
+
+    <p>{{ dateMethod() }}</p>
+    <p>{{ dateComputed }}</p> <!--  변경되는 것이 아닌 그 실행 순간의 값을 뽑아준다  -->
+
+</div>
+<script src="./vue.js"></script>
+<script>
+    const app = new Vue ({
+        el:'#app',
+        data: {
+            message: '안녕하세요',
+            d: Date.now(),
+        },
+        methods: {
+            reverseMessage() {
+                return this.message.split('').reverse().join('')
+            },
+            dateMethod () {
+                return Date.now()
+            }
+        },
+        computed: { // computed 안에는 실행되어있고, 이름으로 값을 가져옴
+            reversedMessage () {
+                return this.message.split('').reverse().join('')
+            },
+            dateComputed () {
+                return Date.now()
+            }
+        },
+    })
+</script>
+</body>
+</html>
+

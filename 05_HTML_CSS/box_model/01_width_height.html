@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        div.control {
+            width: 300px;
+            height: 100px;
+            background-color: cornsilk;
+            border: 5px solid rgb(201, 178, 89);
+            overflow: hidden;
+        }
+        div.box1 {
+            width: 100px;
+            height: 50px;
+            background-color: rgb(206, 93, 93); 
+            border: 5px solid rgb(214, 182, 182);
+            
+            margin-top: 20px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            margin-left: 100px;
+
+            /* padding 시계방향으로 돌면서 적용 */
+            padding: 10px 20px 30px 40px; 
+        }
+        div.center {
+            border: 5px solid rgb(54, 83, 136);
+            background-color: cornflowerblue;
+            /* max-width을 쓰면 box가 브라우저 크기대로 바뀐다 */
+            max-width: 600px;
+            /* margin: auto;는 가로 기준으로 중간 정렬 그대신 max-width가 없으면 무용지물 */
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="control">
+        But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?
+    </div>
+    <hr>
+    <div class="box1">
+        This is div
+    </div>
+    <hr>
+    <div class="center">
+        At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat
+    </div>
+</body>
+</html>

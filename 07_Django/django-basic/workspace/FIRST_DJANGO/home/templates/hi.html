@@ -1,0 +1,15 @@
+{% extends 'home_base.html' %}
+{% block title %} Hi {% endblock %}
+
+{% block content %}
+    <h1>Hi, {{ name }}</h1>
+    <ul>
+        {% for s in ss3 %}
+            {% if s == name %}
+                <li><strong>{{ s }}</strong></li>
+            {% else %}
+                <li>{{ s }}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+{% endblock %}

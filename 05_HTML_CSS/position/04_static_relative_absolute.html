@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body { margin: 0; }
+        .parent {
+            width: 150px;
+            height: 150px;
+            background: gray;
+            border: 1px solid black;
+            margin: 50px;
+            /* position: relative; */
+            z-index: 1000; /* static이 아닌 애들 한테만 z축을 줄 수 있다*/
+        }
+
+        .relative-box {
+            position: relative;
+            top: 10px;
+            left: 10px;
+            width: 150px;
+            height: 150px;
+            background: #b1b6d6;
+            color: #e55c3c;
+            font-weight: bold;
+            text-align: center;
+            line-height: 150px;
+        }
+
+        .absolute-box {
+            position: absolute;
+            height: 150px;
+            width: 150px;
+            top: 10px;
+            left: 10px;
+            background: rgb(141, 199, 4);
+            color: deeppink;
+            font-weight: bold;
+            text-align: center;
+            line-height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="absolute-box">
+            absolute-box
+        </div>
+    </div>
+    <div class="parent">
+            <div class="relative-box">
+                relative-box
+            </div>
+    </div>
+</body>
+</html>

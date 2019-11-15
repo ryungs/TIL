@@ -1,0 +1,11 @@
+{% extends 'etc_base.html' %}
+{% block title %} pick_lotto {% endblock %}
+
+{% block content %}
+    <ol>
+         <!-- DTL (Django Template Language) => Template Tags -->
+        {% for number in lotto %}
+            <li>{{ number }}</li>
+        {% endfor %}
+    </ol>
+{% endblock %}

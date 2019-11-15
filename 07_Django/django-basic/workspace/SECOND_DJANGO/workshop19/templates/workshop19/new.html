@@ -1,0 +1,27 @@
+{% extends 'workshop19/base.html' %}
+
+{% block title %} New Student {% endblock %}
+
+{% block body %}
+<h1>New Student</h1>
+<form action="/workshop19/students/create/" method="POST"> <!--action이 도착지 method="POST" 이제 이 편지 봉투는 --> 
+    {% csrf_token %}
+    <div>
+        <input type="text" name="input_name" placeholder="name"/>
+    </div>
+    <div>
+        <input type="text" name="input_email" placeholder="email"/>
+    </div>
+    <div>
+        <input type="date" name="input_birthday" placeholder="19000000"/>
+    </div>
+    <div>
+        <input type="number" name="input_age" placeholder="age"/>
+    </div>
+    
+    <div>
+        <input type="submit" value="Submit"/>
+    </div>
+</form>
+
+{% endblock %}

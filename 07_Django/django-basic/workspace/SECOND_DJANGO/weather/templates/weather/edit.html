@@ -1,0 +1,16 @@
+{% extends 'weather/base.html' %}
+
+{% block title %} Edit Weather {% endblock %}
+
+{% block body %}
+<h1>Edit Weather</h1>
+<form action="/weather/edit/{{ weather.id }}/" method="POST"> <!--action이 도착지, method="POST" 이제 이 편지 봉투는 잠겨서 온다 --> 
+    {% csrf_token %}
+    <div>
+        <input type="text" name="input_location" value="{{ weather.location }}"/>
+    </div>
+    <div>
+        <input type="submit" value="Submit"/>
+    </div>
+</form>
+{% endblock %}

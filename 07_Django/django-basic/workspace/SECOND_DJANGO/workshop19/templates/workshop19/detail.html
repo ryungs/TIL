@@ -1,0 +1,31 @@
+{% extends 'workshop19/base.html' %}
+
+{% block title%} Student{{ student.id }}{% endblock %}
+
+{% block body %}
+<h1>{{ student.name }} </h1>
+<div>
+    {{ student.email }}
+</div>
+<div>
+    {{ student.birthday }}
+</div>
+<div>
+    {{ student.age }}
+</div>
+<div>
+    <a href="/workshop19/students/">
+        <button>Show Student List</button>
+    </a>
+</div>    
+<div>
+    <a href="/workshop19/students/update_student/{{ student.id }}/">
+        <button>Edit this student</button>
+    </a>
+</div>
+<form action="/workshop19/students/delete/{{ student.id }}/" method="POST">
+    {% csrf_token %} <!--post로 날리는거-->
+    <button>Delete this article</button>
+</form>
+{% endblock %}
+

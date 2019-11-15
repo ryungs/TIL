@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    {% if h1 %}
+        <h1>{{ h1 }}</h1>
+    {% endif %}
+    <h1 class="mt-3">💜DR💜</h1>
+    <p class="profile_intro">Hello</p>
+    <p class="posthead">인기 게시물</p>
+    <section class="card-columns">
+        {% for post in posts %}
+            {% include 'posts/_post.html' with post=post comment_form=comment_form %}
+        {% endfor %}
+    </section>
+{% endblock %}

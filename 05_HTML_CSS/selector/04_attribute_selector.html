@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <style>
+            /* element 중에 href attribute를 갖는 모든 요소에 style 적용해라 */
+            a[href] { color:rgb(102, 85, 211); }
+            /* element 중에 target이 _blank인 모든 요소에 style 적용해라 */
+            a[target="_blank"] { color:dodgerblue; }
+            /* attribute 값에 정확하게 "first" 문자열이 있다면 style 적용해라 */
+            p[title~="first"] { color:goldenrod; }
+            /* "second" 와 에 바로 이어서 - 가 오는 것까지 잡아서 style 적용해라  */
+            p[title|="second"] { color:indianred; }
+            /* "second" 로 시작하는    */
+            p[title^="second"] { color:rgb(209, 21, 21); }
+            /* ".net" 으로 끝나는    */
+            a[herf$=".net"] { color:rgb(0, 6, 8); }
+            /* title에 "first"가 포함되어 있는 p    */
+            p[title*="first"] { color:rgb(223, 89, 194); }
+     
+        </style>
+    </head>
+    <body>
+        <!--  -->
+        <a href="google.com">Google</a>
+        <a href="naver.com" target="_blank">Naver</a>
+        <a href="facebook.com">facebook</a>
+        <a href="ssafy.net">Ssafy</a>
+        <a>???</a>
+        <hr>
+        <p title="first">I'm P</p>
+        <p title="second-p">I'm PP </p>
+        <p title="p-first">P I am</p>
+        <p title="secondaa">PP I am</p>
+
+    </body>
+    </html>

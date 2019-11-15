@@ -1,0 +1,65 @@
+{% extends 'board_ad/base.html' %}
+
+{% block body %}
+    <h1>{{ posting.title }}</h1>
+    <p>
+        {{ posting.content }}
+    </p>
+    <hr>
+    <a href="{% url 'board_ad:posting_list' %}"><button>List</button></a>
+    <a href="{% url 'board_ad:update_posting' posting.id %}"><button>Edit</button></a>
+    <form action="{% url 'board_ad:delete_posting' posting.id %}" method="POST">
+    {% csrf_token %}
+         <button type="submit" onclick="return confirm('진짜 지울거야?')">Delete</button>
+    </form>
+    <hr>
+    <form action="{% url 'board_ad:create_comment' posting.id %}" method="POST">
+    {% csrf_token %}
+        <label for="comment"></label>
+        <input type="text" id="comment" name="comment">
+        {#<input type="submit" value="댓글쓰기">#}
+        <button type="submit">댓글쓰기</button>
+    </form>
+    {# 교수님 코드 #}
+    <section>
+        {% if comments %}
+            <ul>
+                {% for comment in comments %}
+                    <li>
+                        {{ comment.content }}
+                        <form action="{% url 'board_ad:delete_comment' posting_id=posting.id comment_id=comment.id %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit">Delete</button>
+                        </form>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </section>
+
+    {# 내 코드 form 태그 안에는 내가 보내고 싶은 버튼만 있어야 문법상 맞는거#}
+
+    {#    <ul>#}
+    {#        {% for comment in comments %}#}
+    {#            <li>#}
+    {#                <form action="{% url 'board_ad:delete_comment' posting.id comment.id %}" method="POST">#}
+    {#                    {% csrf_token %}#}
+    {#                    {{ comment.content }}#}
+    {#                    {{ comment.created_at }}#}
+    {#                    <button type="submit">댓글 삭제</button>#}
+    {#                </form>#}
+    {#            </li>#}
+    {#        {% endfor %}#}
+    {#    </ul>#}
+
+
+    {# 삭제 버튼 눌렀을 때 내가 원하는 문구 뜨게 하는거    #}
+    {#<button id='reset_button'>WOW</button>#}
+    {#<script>#}
+    {# button = document.querySelector('#reset_button');#}
+    {# button.addEventListener('click', (e) => {#}
+    {# document.write('<h1>hahah</h1>');#}
+    {#  });#}
+    {# </script>#}
+
+{% endblock %}

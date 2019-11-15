@@ -1,0 +1,19 @@
+{% extends 'boards/base.html' %}
+
+{% block title %} New Article {% endblock %}
+
+{% block body %}
+<h1>New Article</h1>
+<form action="/boards/articles/new_article/" method="POST"> <!--action이 도착지, method="POST" 이제 이 편지 봉투는 잠겨서 온다 --> 
+    {% csrf_token %}
+    <div>
+        <input type="text" name="input_title"/>
+    </div>
+    <div>
+        <textarea name="input_content"></textarea>
+    </div>
+    <div>
+        <input type="submit" value="Submit"/>
+    </div>
+</form>
+{% endblock %}

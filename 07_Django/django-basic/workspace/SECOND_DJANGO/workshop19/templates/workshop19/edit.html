@@ -1,0 +1,26 @@
+{% extends 'workshop19/base.html' %}
+
+{% block title %} Edit Student {% endblock %}
+
+{% block body %}
+<h1>Edit Student</h1>
+<form action="/workshop19/students/update_student/{{ student.id }}/" method="POST"> <!--action이 도착지, method="POST" 이제 이 편지 봉투는 잠겨서 온다 --> 
+    {% csrf_token %}
+    <div>
+        <input type="text" name="input_name" value="{{ student.name }}" placeholder="name"/>
+    </div>
+    <div>
+        <input type="text" name="input_email" value="{{ student.email }}" placeholder="email"/>
+    </div>
+    <div>
+        <input type="date" name="input_birthday" value="{{ birthday }}"/>
+    </div>
+    <div>
+        <input type="number" name="input_age" value="{{ student.age }}" placeholder="age"/>
+    </div>
+    
+    <div>
+        <input type="submit" value="Submit"/>
+    </div>
+</form>
+{% endblock %}

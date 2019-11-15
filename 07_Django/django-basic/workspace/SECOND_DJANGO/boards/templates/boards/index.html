@@ -1,0 +1,13 @@
+{% extends 'boards/base.html' %}
+
+{% block title %} Articles {% endblock %}
+
+{% block body%} 
+<h1>All Articles</h1>
+<a href='/boards/articles/new/'><button>New Article!</button></a>
+<ul>
+    {% for article in articles %}
+        <li><a href='/boards/articles/{{ article.id }}/'>{{ article.title }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

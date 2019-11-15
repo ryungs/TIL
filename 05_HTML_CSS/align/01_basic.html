@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .box {
+            color: white;
+            font-weight: bold;
+            font-size: 50px;
+            border-radius: 6px;
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            padding: 10px;
+        }
+        /* bander free fix를 쓰면 아래 버전에도 같은 기능을 쓸 수 있고, 업데이트 한 버전에도 같은 기능을 쓸 수 있다 */
+        /* float는 이미지 옆에 텍스트를 붙이고 싶어서 만들어 졌다 */
+        .d1, .d2 {
+            float: left; 
+        }
+        .d1 {
+            background: red;
+        }
+        /* d2를 중간정렬하고 싶으면 margin auto */
+        .d2 {
+            background: orange;
+        }
+
+        .d3, .d4 {
+            float: right;
+        }
+        .d3 {
+            background: blue;
+        }
+        .d4 {
+            background: navy;
+        }
+    </style>
+</head>
+<body>
+    <div class="contianer">
+        <div class="box d1"> 1 </div>
+        <div class="box d2"> 2 </div>
+        <div class="box d3"> 3 </div>
+        <div class="box d4"> 4 </div>
+    </div>
+</body>
+</html>

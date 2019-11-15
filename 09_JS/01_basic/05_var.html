@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>JS</title>
+    <style>
+        body {
+            background: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <script>
+       /*
+        변수(Variable) 변할 수 있는 => 할당이 다시 가능하다
+        앞으로 재할당할 것이 확실하면 변수에 넣는다
+
+        상수(Constant) 항상 같은 => 한번 할당되면, 두번 다시 재 할당하지 않는다
+        위에꺼 제외하고 모두 상수
+        BASE_DIR AUTH_USER_MODEL = 상수로 쓰려면 무조건 대문자로 적어야 한다
+        */
+
+        // ES5
+        var number= 1; //global 변수 쓰면 안된다, 옛날말
+        for (let i = 0; i < 10; i ++) {
+            console.log(i);
+        }
+        console.log(i); // let 으로 쓰면 여기서는 i가 scope 를 벗어나기 때문에 console.log 가 안 잡힌다, var로 쓰면 가능
+        // ES6+
+        let string = 'hi'; // string이라는 변수에 hi를 담겠다
+        string = 'bye' // 가능
+
+    </script>
+</body>
+</html>
